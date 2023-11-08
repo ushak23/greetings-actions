@@ -54,15 +54,15 @@ jobs:
         java -jar greetings-actions.jar ${{ github.event.inputs.myValues }}
 
 
-count-args:
-
-  runs-on: ubuntu-latest
-  steps:
-  - id: report-count
-    uses: ushak23/arg-count-action@main
-    with:
-      arguments-to-count: ${{ github.event.inputs.myValues }}
-  - run: echo
-  - shell: bash
-    run: |
-      echo argument count is ${{ steps.report-count.outputs.arg-count }}
+  count-args:
+  
+    runs-on: ubuntu-latest
+    steps:
+    - id: report-count
+      uses: ushak23/arg-count-action@main
+      with:
+        arguments-to-count: ${{ github.event.inputs.myValues }}
+    - run: echo
+    - shell: bash
+      run: |
+        echo argument count is ${{ steps.report-count.outputs.arg-count }}
